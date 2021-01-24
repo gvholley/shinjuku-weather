@@ -1,4 +1,5 @@
 import React from 'react';
+import SwitchClass from './SwitchClass'
 
 function App() {
   return (
