@@ -1,10 +1,17 @@
 import React from 'react';
-import SwitchClass from './SwitchClass'
+import WeatherCard from './components/WeatherCard'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div>
-      <h1>Hi there</h1>
+      <WeatherCard
+        dt={1406080800 * 1000}
+        min={20}
+        max={35}
+        main="Sunny"
+        icon="01d"
+      />
     </div>
   );
 }
