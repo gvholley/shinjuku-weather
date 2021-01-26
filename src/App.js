@@ -1,5 +1,6 @@
 import React from 'react';
-import WeatherCard from './components/WeatherCard'
+import WeatherCard from './components/WeatherCard';
+import CitySelector from './components/CitySelector';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         main="Sunny"
         icon="01d"
       />
+      <CitySelector onSelectButtonClick={city => console.log(city)} />
     </div>
   );
 }
