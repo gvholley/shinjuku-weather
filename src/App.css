@@ -2,4 +2,8 @@
   text-align: center;
 }
 
+.row {
+  justify-content: center;
+  margin: 15px 0;
+}
 
