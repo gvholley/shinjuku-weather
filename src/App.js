@@ -1,21 +1,35 @@
-import React from 'react';
-import WeatherCard from './components/WeatherCard';
-import CitySelector from './components/CitySelector';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { useEffect, useState } from 'react';
 
-function App() {
-  return (
-    <div>
-      <WeatherCard
-        dt={1406080800 * 1000}
-        min={20}
-        max={35}
-        main="Sunny"
-        icon="01d"
-      />
-      <CitySelector onSelectButtonClick={city => console.log(city)} />
-    </div>
-  );
-}
+const useFetch = initialUrl => {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  const [inProgress, setInProgress] = useState(false);
+  const [url, setUrl] = useState(initialUrl);
 
-export default App;
+  useEffect(() => {
+    if (!url) return;
+    setInProgress(true);
+    setData(null);
+    setError(null);
+    fetch(url)
+      .then(r => r.json())
+      .then(data => {
+        setInProgress(false);
+        if (data.cod >= 400) {
+          setError(data.message);
+          return;
+        }
+        setData(data);
+      })
+      .catch(error => {
+        setInProgress(false);
+        setError(error);
+      })
+  }, [url]);
+
+
+  return { data, error, inProgress, setUrl };
+
+};
+
+export default useFetch;

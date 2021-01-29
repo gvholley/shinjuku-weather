@@ -1,9 +1,9 @@
 import {useEffect, useState } from 'react';
 
 const useFetch = url => {
-  const [data, setData] = useState(initialState: null);
-  const [error, setError] = useState(initialState: null);
-  const [inProgress, setInProgress] = useState(initialState: false);
+  const [data, setData] = useState( initialState: null );
+  const [error, setError] = useState( initialState: null );
+  const [inProgress, setInProgress] = useState( initialState: false );
 }
 
 useEffect(effect: () => {
