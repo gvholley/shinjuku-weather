@@ -1,24 +1,19 @@
 import React from 'react';
-import WeatherCard from './components/WeatherCard';
+import './App.css';
 import CitySelector from './components/CitySelector';
+import { Container } from 'react-bootstrap';
 import useFetch from './hooks/useFetch';
 import {apiKey, baseUrl} from './config';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import WeatherList from './components/WeatherList';
 
 function App() {
 
-  const { data, error, inProgress } = useFetch();
+  const { data, error, inProgress, setUrl } = useFetch();
   return (
-    <div>
-      <WeatherCard
-        dt={1406080800 * 1000}
-        min={20}
-        max={35}
-        main="Sunny"
-        icon="01d"
-      />
-      <CitySelector onSelectButtonClick={city => setUrl(`${baseUrl}/data/2.5/forecast/daily?q=${city}&cnt=5&appId=$units=metric`)} />
-    </div>
+    <Container className="App">
+      <CitySelector onSelectButtonClick={city => setUrl(`${baseUrl}/data/2.5/forecast/daily?q=${city}&cnt=5&appId=${apiKey}&units=metric`)} />
+      {data && <WeatherList weathers={data.list} />}
+    </Container>
   );
 }
 
