@@ -10,7 +10,6 @@ import WeatherCard from './components/WeatherCard';
 
 function App() {
 
-  const { data, error, inProgress, setUrl } = useFetch();
   return (
     <Container className="App">
       <WeatherCard />
