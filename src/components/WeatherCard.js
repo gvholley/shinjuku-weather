@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactWeather, { useOpenWeather } from 'react-open-weather';
 
+
+
 const customStyles = {
   fontFamily:  'Helvetica, sans-serif',
   gradientStart:  '#5B9279',
@@ -26,7 +28,7 @@ const WeatherCard = () => {
     key: 'e6c5ffe9d357a02f1df56eaa546d46dc',
     lat: '35.6896',
     lon: '139.7006',
-    lang: 'en',
+    lang: 'jp',
     unit: 'metric', // values are (metric, standard, imperial)
   });
   return (
@@ -35,7 +37,7 @@ const WeatherCard = () => {
       isLoading={isLoading}
       errorMessage={errorMessage}
       data={data}
-      lang="en"
+      lang="jp"
       locationLabel="Shinjuku"
       unitsLabels={{ temperature: 'C', windSpeed: 'Km/h' }}
       showForecast
