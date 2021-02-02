@@ -13,7 +13,7 @@ function App() {
 
   return (
     <Container className="App">
-      <WeatherContainer />
+      <WeatherList />
     </Container>
   );
 }
