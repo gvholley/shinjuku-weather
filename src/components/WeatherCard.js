@@ -6,7 +6,6 @@ const WeatherCard = ({ dt, min, max, main, icon }) => {
 
   return (
     <Card>
-      <Card.Img variant="top" src={`http://openweathermap.org/img/wn/${icon}@2x.png`} />
       <Card.Body>
         <Card.Title>{main}</Card.Title>
         <p>{date.getFullYear()}-{date.getMonth() + 1}-{date.getDate()}</p>
