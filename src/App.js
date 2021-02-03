@@ -13,6 +13,7 @@ function App() {
 
   return (
     <Container className="App">
+    <WeatherCard />
       <WeatherList />
     </Container>
   );
