@@ -11,6 +11,8 @@ import WeekContainer from './components/WeekContainer';
 
 function App() {
 
+  const { data, error, inProgress, setUrl } = useFetch();
+
   return (
     <Container className="App">
     <WeatherCard />

@@ -6,6 +6,7 @@ const WeatherCard = ({ dt, min, max, main, icon }) => {
 
   return (
     <Card>
+      <Card />
       <Card.Body>
         <Card.Title>{main}</Card.Title>
         <p>{date.getFullYear()}-{date.getMonth() + 1}-{date.getDate()}</p>
