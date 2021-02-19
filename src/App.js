@@ -7,7 +7,8 @@ import {apiKey, baseUrl} from './config';
 import WeatherList from './components/WeatherList';
 import ReactWeather, { useOpenWeather } from 'react-open-weather';
 import WeatherCard from './components/WeatherCard';
-import WeekContainer from './components/WeekContainer';
+import WeatherComponent from './components/WeatherComponent';
+//import WeekContainer from './components/WeekContainer';
 
 function App() {
 
@@ -15,8 +16,7 @@ function App() {
 
   return (
     <Container className="App">
-    <WeatherCard />
-      <WeatherList />
+    <WeatherComponent />
     </Container>
   );
 }
